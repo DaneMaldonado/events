@@ -1,11 +1,11 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    my_sprite.sayText("Hello my name is Dane.")
+    let mySprite: Sprite = null
+    say_something(mySprite)
 })
 function say_something (sprite: Sprite) {
     sprite.sayText("Hello my name is Dane.")
 }
-let my_sprite: Sprite = null
-my_sprite = sprites.create(img`
+let my_sprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . 4 4 4 . . . . 4 4 4 . . . . 
     . 4 5 5 5 e . . e 5 5 5 4 . . . 
@@ -22,4 +22,3 @@ my_sprite = sprites.create(img`
     . . . f f f f f . . f f . . . . 
     `, SpriteKind.Player)
 my_sprite.setStayInScreen(true)
-say_something(my_sprite)

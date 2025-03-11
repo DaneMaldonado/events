@@ -1,9 +1,10 @@
 def on_a_pressed():
-    pass
+    my_sprite.say_text("Hello my name is Dane.")
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
 
 def say_something(sprite: Sprite):
     sprite.say_text("Hello my name is Dane.")
+my_sprite: Sprite = None
 my_sprite = sprites.create(img("""
         . . . . . . . . . . . . . . . . 
             . . 4 4 4 . . . . 4 4 4 . . . . 
@@ -21,5 +22,5 @@ my_sprite = sprites.create(img("""
             . . . f f f f f . . f f . . . .
     """),
     SpriteKind.player)
-controller.move_sprite(my_sprite)
 my_sprite.set_stay_in_screen(True)
+say_something(my_sprite)
